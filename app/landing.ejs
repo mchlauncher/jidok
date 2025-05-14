@@ -168,6 +168,12 @@
                         <option value="1920x1080">1920x1080</option>
                     </select>
                 </div>
+                <div id="audioPlayerContainer">
+                    <span id="audioIcon">🎵</span>
+                    <audio id="audioPlayer" controls autoplay loop volume="0.5">
+                        <source src="https://github.com/mchlauncher/jidok/raw/main/app/assets/audio/background.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
             </div>
         </div>
         <div id="center">
@@ -266,4 +272,30 @@
         </div>
     </div>
     <script src="./assets/js/scripts/landing.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audioPlayer');
+            const toggleButton = document.getElementById('toggleAudioButton');
+            const volumeControl = document.getElementById('volumeControl');
+
+            // 기본 볼륨 설정
+            audio.volume = 0.5;
+
+            // 재생/일시정지 버튼 제어
+            toggleButton.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    toggleButton.textContent = '⏸️';
+                } else {
+                    audio.pause();
+                    toggleButton.textContent = '▶️';
+                }
+            });
+
+            // 볼륨 슬라이더 제어
+            volumeControl.addEventListener('input', () => {
+                audio.volume = volumeControl.value;
+            });
+        });
+    </script>
 </div>

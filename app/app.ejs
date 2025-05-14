@@ -5,6 +5,7 @@
     <script src="./assets/js/scripts/uicore.js"></script>
     <script src="./assets/js/scripts/uibinder.js"></script>
     <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/audio.css">
     <style>
         body {
             /*background: url('assets/images/backgrounds/<%=bkid%>.jpg') no-repeat center center fixed;*/
@@ -29,11 +30,6 @@
 <body bkid="<%=bkid%>">
     <%- include('frame') %>
     <div id="main">
-        <div id="audioPlayerContainer" style="display: none;">
-            <audio id="audioPlayer" autoplay loop>
-                <source src="https://github.com/mchlauncher/jidok/raw/main/app/assets/audio/background.mp3" type="audio/mpeg">
-            </audio>
-        </div>
         <%- include('welcome') %>
         <%- include('login') %>
         <%- include('waiting') %>
