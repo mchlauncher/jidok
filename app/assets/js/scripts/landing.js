@@ -155,6 +155,17 @@ document.getElementById('launch_button').addEventListener('click', async e => {
             if(details != null){
                 loggerLanding.info('Jvm Details', details)
                 await dlAsync()
+
+                if (typeof document !== 'undefined') {
+                    const audio = document.getElementById('audioPlayer')
+                    if (audio) {
+                        audio.pause()
+                        loggerLanding.info('오디오 일시정지')
+                    } else {
+                        loggerLanding.warn('audioPlayer 요소를 찾을 수 없음')
+                    }
+                }
+
                 setTimeout(() => {
                     loggerLanding.info('10초 후 강제 종료')
                     if (typeof window !== 'undefined' && window.close) {

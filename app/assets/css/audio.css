@@ -21,16 +21,19 @@ audio::-webkit-media-controls-toggle-closed-captions-button {
 }
 
 #audioPlayerContainer {
-    margin-top: 15px;
-    width: 100%;
+    position: relative;
+    left: 50px;
+    top: 10px;
     display: flex;
-    justify-content: flex-end; 
-    padding-right: 20px;
+    align-items: center;
+    gap: 5px;
 }
 
 #audioIcon {
     font-size: 20px;
-    margin-right: 5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 #audioPlayer {
