@@ -166,14 +166,14 @@ document.getElementById('launch_button').addEventListener('click', async e => {
                     }
                 }
 
-                setTimeout(() => {
-                    loggerLanding.info('10초 후 강제 종료')
-                    if (typeof window !== 'undefined' && window.close) {
-                        window.close()
-                    } else if (typeof app !== 'undefined' && app.quit) {
-                        app.quit()
-                    }
-                }, 10000)
+                // setTimeout(() => {
+                //     loggerLanding.info('10초 후 강제 종료')
+                //     if (typeof window !== 'undefined' && window.close) {
+                //         window.close()
+                //     } else if (typeof app !== 'undefined' && app.quit) {
+                //         app.quit()
+                //     }
+                // }, 10000)
             } else {
                 await asyncSystemScan(server.effectiveJavaOptions)
             }
